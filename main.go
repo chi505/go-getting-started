@@ -18,11 +18,11 @@ func main() {
 
 	router := gin.New()
 	router.Use(gin.Logger())
-	router.LoadHTMLGlob("templates/*.tmpl.html")
+	//router.LoadHTMLGlob("templates/*.tmpl.html")
 	router.Static("/static", "static")
 
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "Hello World", nil)
+		"Hello World"
 	})
 	//	router.GET("/", func(c *gin.Context) {
 	//		c.HTML(http.StatusOK, "index.tmpl.html", nil)
