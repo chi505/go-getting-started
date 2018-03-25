@@ -22,12 +22,11 @@ func main() {
 	router.Static("/static", "static")
 
 	//	router.GET("/", func(c *gin.Context) {
-	//		c.String(http.StatusOK, ++)
+	//		c.String(http.StatusOK, "Hello World")
 	//	})
 	router.GET("/", func(c *gin.Context) {
 		count++
-		c.String(http.StatusOK, string(count)+" ")
-		//			c.HTML(http.StatusOK, "index.tmpl.html", nil)
+		c.HTML(http.StatusOK, "index.tmpl.html", gin.H{"body": string(count)})
 	})
 
 	router.Run(":" + port)
