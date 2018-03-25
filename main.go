@@ -26,7 +26,7 @@ func main() {
 	//	})
 	router.GET("/", func(c *gin.Context) {
 		count++
-		c.String(http.StatusOK, count)
+		c.String(http.StatusOK, String(count))
 		//			c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
