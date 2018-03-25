@@ -1,12 +1,12 @@
 package main
 
 import (
+	"github.com/gin-gonic/gin"
+	_ "github.com/heroku/x/hmetrics/onload"
 	"log"
 	"net/http"
 	"os"
-
-	"github.com/gin-gonic/gin"
-	_ "github.com/heroku/x/hmetrics/onload"
+	"strconv"
 )
 
 func main() {
@@ -26,7 +26,7 @@ func main() {
 	//	})
 	router.GET("/", func(c *gin.Context) {
 		count++
-		c.HTML(http.StatusOK, "index.tmpl.html", gin.H{"body": string(count)})
+		c.HTML(http.StatusOK, "index.tmpl.html", gin.H{"body": strconv.ltoa(count)})
 	})
 
 	router.Run(":" + port)
