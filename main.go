@@ -26,7 +26,7 @@ func main() {
 	//	})
 	router.GET("/", func(c *gin.Context) {
 		count++
-		c.HTML(http.StatusOK, "index.tmpl.html", gin.H{"body": strconv.ltoa(count)})
+		c.HTML(http.StatusOK, "index.tmpl.html", gin.H{"body": strconv.Itoa(count)})
 	})
 
 	router.Run(":" + port)
